@@ -46,7 +46,6 @@
 		"test": "npx -s zenfs-test -abc",
 		"build": "tsc -p tsconfig.json",
 		"build:test-files": "node tests/build.ts",
-		"build:docs": "typedoc",
 		"prepublishOnly": "npm run build"
 	},
 	"devDependencies": {

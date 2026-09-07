@@ -13,10 +13,5 @@
 		"verbatimModuleSyntax": true
 	},
 	"include": ["src/**/*"],
-	"exclude": ["node_modules"],
-	"typedocOptions": {
-		"entryPoints": ["./src/index.ts"],
-		"out": "docs",
-		"name": "ZenFS Archives"
-	}
+	"exclude": ["node_modules"]
 }
