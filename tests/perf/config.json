@@ -1,0 +1,63 @@
+{
+	"flags": {
+		"lazy": [true, false]
+	},
+	"tests": [
+		{
+			"path": "mount.ts",
+			"name": "Mount a zip of many small entries",
+			"flags": ["lazy"],
+			"measure": {
+				"entries": { "throughput": "ms", "aggregate_throughput": "ms" }
+			},
+			"configurations": [
+				{ "value": { "entries": 250, "size": 32 } },
+				{ "value": { "entries": 500, "size": 32 } },
+				{ "value": { "entries": 1000, "size": 32 } },
+				{ "value": { "entries": 2000, "size": 32 } },
+				{ "value": { "entries": 4000, "size": 32 } },
+				{ "cpu": 1, "value": { "entries": 8000, "size": 32 } },
+				{ "cpu": 2, "mem": 1, "value": { "entries": 16000, "size": 32 } },
+				{ "cpu": 3, "mem": 2, "value": { "entries": 32000, "size": 32 } }
+			]
+		},
+		{
+			"path": "read.ts",
+			"name": "Mount and read a typeshed-shaped zip",
+			"flags": ["lazy"],
+			"measure": {
+				"bytes": { "throughput": "s", "unit": "MB" },
+				"entries": { "cost": true, "aggregate_cost": true, "unit": "entry" }
+			},
+			"configurations": [
+				{ "name": "read 1%", "value": { "entries": 4627, "size": 2000, "spread": 1, "fraction": 0.01 } },
+				{ "name": "read 5%", "value": { "entries": 4627, "size": 2000, "spread": 1, "fraction": 0.05 } },
+				{
+					"name": "read 100%",
+					"cpu": 1,
+					"value": { "entries": 4627, "size": 2000, "spread": 1, "fraction": 1 }
+				}
+			]
+		},
+		{
+			"path": "read.ts",
+			"name": "Read cost by payload size",
+			"flags": ["lazy"],
+			"measure": {
+				"bytes": { "throughput": "s", "unit": "MB", "aggregate_throughput": "s" }
+			},
+			"configurations": [
+				{ "name": "32 B/entry", "value": { "entries": 1000, "size": 32, "fraction": 0.05 } },
+				{ "name": "256 B/entry", "value": { "entries": 1000, "size": 256, "fraction": 0.05 } },
+				{ "name": "1 KB/entry", "value": { "entries": 1000, "size": 1024, "fraction": 0.05 } },
+				{ "name": "4 KB/entry", "cpu": 1, "value": { "entries": 1000, "size": 4096, "fraction": 0.05 } },
+				{
+					"name": "16 KB/entry",
+					"cpu": 2,
+					"mem": 1,
+					"value": { "entries": 1000, "size": 16384, "fraction": 0.05 }
+				}
+			]
+		}
+	]
+}
