@@ -99,7 +99,7 @@ Direct commits to OSP or OOC are detected and opened as PRs back to `Interested-
 | Contributor | Commits |
 |---|---|
 | [@james-pre](https://github.com/james-pre) | 324 |
-| [@Interested-Deving-1896](https://github.com/Interested-Deving-1896) | 2 |
+| [@Interested-Deving-1896](https://github.com/Interested-Deving-1896) | 3 |
 | [@jlarmstrongiv](https://github.com/jlarmstrongiv) | 1 |
 | [@lvcabral](https://github.com/lvcabral) | 1 |
 | [@3xau1o](https://github.com/3xau1o) | 1 |
@@ -120,18 +120,15 @@ _No additional resource files found._
 ## Accessibility
 
 <!-- AI:start:accessibility -->
-This repo uses automated accessibility auditing via `check-accessibility.yml`.
-
-Checks include: CODEOWNERS ownership coverage, README screen-reader compatibility,
-WCAG 2.1 AA HTML compliance, audio overview (espeak-ng), and Braille output (liblouis).
-
+No  was found when this README was generated. Check the
+[Actions tab](https://github.com/Interested-Deving-1896/zenfs-archives/actions) for repository-specific checks, and document an
+accessibility status only when a report or workflow provides evidence for it.
 
 
 
-Run the [Check Accessibility](https://github.com/Interested-Deving-1896/zenfs-archives/actions/workflows/check-accessibility.yml)
-workflow to generate the first report and accessibility artifacts.
+
 See the [W3C Web Content Accessibility Guidelines (WCAG)](https://www.w3.org/WAI/standards-guidelines/wcag/)
-for the underlying accessibility reference.
+for accessibility guidance.
 <!-- AI:end:accessibility -->
 
 ## License
